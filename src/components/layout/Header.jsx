@@ -74,6 +74,7 @@ function Header() {
             stroke="currentColor"
             className="w-6 h-6"
           >
+            <title>{isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}</title>
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
