@@ -14,10 +14,11 @@ function MobileMenu({ isOpen, closeMenu, navItems }) {
             <li key={item.link} role="none">
               <NavLink
                 to={item.link}
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
+                className={`{({ isActive }) =>
+                    isActive ? 'active' : undefined
+                  } hover:border-b-2`}
                 onClick={closeMenu}
                 tabIndex={isOpen ? 0 : -1}
-                aria-hidden={!isOpen}
                 role="menuitem"
               >
                 {item.label}

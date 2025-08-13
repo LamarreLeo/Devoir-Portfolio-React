@@ -46,9 +46,9 @@ function Header() {
               <li key={item.link} role="none">
                 <NavLink
                   to={item.link}
-                  className={({ isActive }) =>
+                  className={`{({ isActive }) =>
                     isActive ? 'active' : undefined
-                  }
+                  } hover:border-b-2`}
                   role="menuitem"
                 >
                   {item.label}
@@ -61,9 +61,9 @@ function Header() {
         {/* Burger Button */}
         <button
           type="button"
-          className="lg:hidden"
+          className="lg:hidden cursor-pointer"
           onClick={toggleMenu}
-          aria-label="Ouvrir le menu"
+          aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
         >
@@ -92,7 +92,6 @@ function Header() {
         className={`${
           isOpen ? 'h-50' : 'h-0'
         } lg:hidden transition-all duration-300 ease-in-out`}
-        aria-hidden="true"
       ></div>
     </div>
   );
