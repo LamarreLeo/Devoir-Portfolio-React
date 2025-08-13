@@ -3,11 +3,22 @@ import { useState } from 'react';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
   const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
+  const navItems = [
+    { label: 'Home', link: '/' },
+    { label: 'Services', link: '/services' },
+    { label: 'Portfolio', link: '/portfolio' },
+    { label: 'Contact', link: '/contact' },
+    { label: 'Mentions légales', link: '/mentions-legales' },
+  ];
 
   return (
     <div>
-      <header className="bg-gray-800 h-12  text-white uppercase px-8 flex items-center justify-between sticky z-50">
+      <header className="bg-gray-800 h-12  text-white uppercase px-8 flex items-center justify-between sticky top-0 z-50">
+        {/* Logo */}
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? undefined : undefined)}
@@ -15,51 +26,25 @@ function Header() {
           John Doe
         </NavLink>
 
-        <nav>
-          <ul className="hidden lg:flex gap-4 ">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/services"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Services
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/portfolio"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Portfolio
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/mentions-legales"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Mentions légales
-              </NavLink>
-            </li>
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:block">
+          <ul className="flex gap-6">
+            {navItems.map((item) => (
+              <li key={item.link}>
+                <NavLink
+                  to={item.link}
+                  className={({ isActive }) =>
+                    isActive ? 'active' : undefined
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
 
+        {/* Burger Button */}
         <button type="button" className="lg:hidden" onClick={toggleMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,53 +63,27 @@ function Header() {
         </button>
       </header>
 
+      {/* Mobile Menu */}
       <div
         className={`
           ${isOpen ? 'translate-y-0' : '-translate-y-full'} 
-          absolute px-8 top-12 left-0 w-full bg-gray-800 text-white lg:hidden transition-transform duration-300 ease-in-out`}
+          sticky px-8 top-12 left-0 w-full bg-gray-800 text-white lg:hidden transition-transform duration-300 ease-in-out pb-4 z-40`}
       >
         <nav>
           <ul className="flex flex-col gap-4">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/services"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Services
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/portfolio"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Portfolio
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li className="pb-4">
-              <NavLink
-                to="/mentions-legales"
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-              >
-                Mentions légales
-              </NavLink>
-            </li>
+            {navItems.map((item) => (
+              <li key={item.link}>
+                <NavLink
+                  to={item.link}
+                  className={({ isActive }) =>
+                    isActive ? 'active' : undefined
+                  }
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
