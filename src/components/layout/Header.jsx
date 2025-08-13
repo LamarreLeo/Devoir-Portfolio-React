@@ -1,12 +1,28 @@
 import { NavLink, Link } from 'react-router-dom';
 import { useState } from 'react';
 import MobileMenu from '../ui/MobileMenu';
+import { useEffect } from 'react';
+import { use } from 'react';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   const navItems = [
     { label: 'Home', link: '/' },
