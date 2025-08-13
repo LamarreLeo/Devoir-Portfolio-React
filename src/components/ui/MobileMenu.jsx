@@ -9,15 +9,16 @@ function MobileMenu({ isOpen, closeMenu, navItems }) {
           fixed px-8 top-12 left-0 w-full bg-gray-800 text-white lg:hidden transition-transform duration-300 ease-in-out pb-4 z-40`}
     >
       <nav aria-label="Menu principal">
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-4" role="menu">
           {navItems.map((item) => (
-            <li key={item.link}>
+            <li key={item.link} role="none">
               <NavLink
                 to={item.link}
                 className={({ isActive }) => (isActive ? 'active' : undefined)}
                 onClick={closeMenu}
                 tabIndex={isOpen ? 0 : -1}
                 aria-hidden={!isOpen}
+                role="menuitem"
               >
                 {item.label}
               </NavLink>

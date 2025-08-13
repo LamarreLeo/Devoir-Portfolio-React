@@ -2,7 +2,6 @@ import { NavLink, Link } from 'react-router-dom';
 import { useState } from 'react';
 import MobileMenu from '../ui/MobileMenu';
 import { useEffect } from 'react';
-import { use } from 'react';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,14 +41,15 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:block" aria-label="Menu principal">
-          <ul className="flex gap-6">
+          <ul className="flex gap-6" role="menu">
             {navItems.map((item) => (
-              <li key={item.link}>
+              <li key={item.link} role="none">
                 <NavLink
                   to={item.link}
                   className={({ isActive }) =>
                     isActive ? 'active' : undefined
                   }
+                  role="menuitem"
                 >
                   {item.label}
                 </NavLink>
@@ -63,6 +63,7 @@ function Header() {
           type="button"
           className="lg:hidden"
           onClick={toggleMenu}
+          aria-label="Ouvrir le menu"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
         >
