@@ -25,7 +25,7 @@ function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:block">
+        <nav className="hidden lg:block" aria-label="Menu principal">
           <ul className="flex gap-6">
             {navItems.map((item) => (
               <li key={item.link}>
@@ -69,6 +69,14 @@ function Header() {
 
       {/* Mobile Menu */}
       <MobileMenu isOpen={isOpen} closeMenu={closeMenu} navItems={navItems} />
+
+      {/* Main Content Push */}
+      <div
+        className={`${
+          isOpen ? 'h-50' : 'h-0'
+        } lg:hidden transition-all duration-300 ease-in-out`}
+        aria-hidden="true"
+      ></div>
     </div>
   );
 }
