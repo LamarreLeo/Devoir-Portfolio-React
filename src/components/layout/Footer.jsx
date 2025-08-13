@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import githubIcon from '../../assets/icons/github-icon.svg';
+import twitterIcon from '../../assets/icons/twitter-icon.svg';
+import linkedinIcon from '../../assets/icons/linkedin-icon.svg';
 
 function Footer() {
   const navItems = [
@@ -9,6 +12,24 @@ function Footer() {
     { label: 'Mentions légales', link: '/mentions-legales' },
   ];
 
+  const socialLinks = [
+    {
+      name: 'Github',
+      icon: githubIcon,
+      url: 'https://github.com/github-john-doe',
+    },
+    {
+      name: 'Twitter',
+      icon: twitterIcon,
+      url: 'https://x.com/johndoe',
+    },
+    {
+      name: 'Linkedin',
+      icon: linkedinIcon,
+      url: 'https://linkedin.com',
+    },
+  ];
+
   const lastProjects = [];
 
   return (
@@ -17,13 +38,23 @@ function Footer() {
         <div className="flex flex-col gap-2">
           <h3 className="text-xl">John Doe</h3>
           <address className="text-sm not-italic flex flex-col gap-1">
-            <p>
+            <p className='leading-relaxed'>
               40 rue Laure Diebold <br />
               69009 Lyon, France
             </p>
             <a href="tel:0123456789">01 23 45 67 89</a>
             <a href="mailto:john.doe@gmail.com">john.doe@gmail.com</a>
           </address>
+
+          <ul className='flex gap-2 mt-2'>
+            {socialLinks.map(({ name, icon, url }) => (
+              <li key={name}>
+                <a href={url}>
+                  <img className="w-6 opacity-50 hover:opacity-100" src={icon} alt={name} />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="flex flex-col gap-2">
