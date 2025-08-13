@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useState } from 'react';
+import MobileMenu from '../ui/MobileMenu';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +20,9 @@ function Header() {
     <div>
       <header className="bg-gray-800 h-12  text-white uppercase px-8 flex items-center justify-between sticky top-0 z-50">
         {/* Logo */}
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? undefined : undefined)}
-        >
+        <Link to="/" onClick={closeMenu}>
           John Doe
-        </NavLink>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:block">
@@ -45,7 +43,13 @@ function Header() {
         </nav>
 
         {/* Burger Button */}
-        <button type="button" className="lg:hidden" onClick={toggleMenu}>
+        <button
+          type="button"
+          className="lg:hidden"
+          onClick={toggleMenu}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -64,29 +68,7 @@ function Header() {
       </header>
 
       {/* Mobile Menu */}
-      <div
-        className={`
-          ${isOpen ? 'translate-y-0' : '-translate-y-full'} 
-          sticky px-8 top-12 left-0 w-full bg-gray-800 text-white lg:hidden transition-transform duration-300 ease-in-out pb-4 z-40`}
-      >
-        <nav>
-          <ul className="flex flex-col gap-4">
-            {navItems.map((item) => (
-              <li key={item.link}>
-                <NavLink
-                  to={item.link}
-                  className={({ isActive }) =>
-                    isActive ? 'active' : undefined
-                  }
-                  onClick={closeMenu}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+      <MobileMenu isOpen={isOpen} closeMenu={closeMenu} navItems={navItems} />
     </div>
   );
 }
