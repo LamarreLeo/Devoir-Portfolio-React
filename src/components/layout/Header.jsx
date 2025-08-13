@@ -41,15 +41,14 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:block" aria-label="Menu principal">
-          <ul className="flex gap-6" role="menu">
+          <ul className="flex gap-6">
             {navItems.map((item) => (
-              <li key={item.link} role="none">
+              <li key={item.link}>
                 <NavLink
                   to={item.link}
-                  className={`{({ isActive }) =>
-                    isActive ? 'active' : undefined
-                  } hover:border-b-2`}
-                  role="menuitem"
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'hover:border-b-2'
+                  }
                 >
                   {item.label}
                 </NavLink>
