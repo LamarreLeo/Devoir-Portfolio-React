@@ -21,7 +21,7 @@ function Footer() {
     {
       name: 'Twitter',
       icon: twitterIcon,
-      url: 'https://x.com/johndoe',
+      url: 'https://x.com',
     },
     {
       name: 'Linkedin',
@@ -38,7 +38,7 @@ function Footer() {
         <div className="flex flex-col gap-2">
           <h3 className="text-xl">John Doe</h3>
           <address className="text-sm not-italic flex flex-col gap-1">
-            <p className='leading-relaxed'>
+            <p className="leading-relaxed">
               40 rue Laure Diebold <br />
               69009 Lyon, France
             </p>
@@ -46,11 +46,15 @@ function Footer() {
             <a href="mailto:john.doe@gmail.com">john.doe@gmail.com</a>
           </address>
 
-          <ul className='flex gap-2 mt-2'>
+          <ul className="flex gap-2 mt-2">
             {socialLinks.map(({ name, icon, url }) => (
               <li key={name}>
-                <a href={url}>
-                  <img className="w-6 opacity-50 hover:opacity-100 filter invert" src={icon} alt={name} />
+                <a href={url} target="_blank">
+                  <img
+                    className="w-6 opacity-50 hover:opacity-100 filter invert"
+                    src={icon}
+                    alt={name}
+                  />
                 </a>
               </li>
             ))}
