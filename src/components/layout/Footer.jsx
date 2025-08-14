@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import githubIcon from '../../assets/icons/github-icon.svg';
 import twitterIcon from '../../assets/icons/twitter-icon.svg';
 import linkedinIcon from '../../assets/icons/linkedin-icon.svg';
+import projectsData from '../../assets/data/projects.json';
 
 function Footer() {
   const navItems = [
@@ -30,7 +31,7 @@ function Footer() {
     },
   ];
 
-  const lastProjects = [];
+  const lastProjects = projectsData.projects.slice(-6);
 
   return (
     <footer className="bg-gray-800 text-white p-8 flex md:justify-center">
@@ -75,15 +76,11 @@ function Footer() {
         <div className="flex flex-col gap-2">
           <h3 className="text-xl">Mes dernières réalisations</h3>
           <ul className="text-sm flex flex-col gap-1">
-            {lastProjects.length > 0 ? (
-              lastProjects.map((project) => (
-                <li key={project.id}>
-                  <Link to={`/portfolio#${project.slug}`}>{project.name}</Link>
-                </li>
-              ))
-            ) : (
-              <li>Aucun projet</li>
-            )}
+            {lastProjects.map((project) => (
+              <li key={project.slug}>
+                <Link to={`/portfolio#${project.slug}`}>{project.title}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
