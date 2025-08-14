@@ -1,5 +1,5 @@
 function MentionsLegales() {
-  return <main></main>;
+  return <main className="mt-12"></main>;
 }
 
 export default MentionsLegales;
