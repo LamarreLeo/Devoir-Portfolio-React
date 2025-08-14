@@ -50,7 +50,7 @@ function Footer() {
             {socialLinks.map(({ name, icon, url }) => (
               <li key={name}>
                 <a href={url}>
-                  <img className="w-6 opacity-50 hover:opacity-100" src={icon} alt={name} />
+                  <img className="w-6 opacity-50 hover:opacity-100 filter invert" src={icon} alt={name} />
                 </a>
               </li>
             ))}
