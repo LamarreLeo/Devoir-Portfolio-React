@@ -33,7 +33,7 @@ function Header() {
 
   return (
     <div>
-      <header className="bg-gray-800 h-12 text-white uppercase px-8 flex items-center justify-between fixed w-screen top-0 z-50">
+      <header className="bg-gray-800 h-12 text-white uppercase px-8 flex items-center justify-between fixed w-screen top-0 z-45">
         {/* Logo */}
         <Link to="/" onClick={closeMenu}>
           John Doe
