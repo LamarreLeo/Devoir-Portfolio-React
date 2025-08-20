@@ -13,14 +13,17 @@ function Modale({ userData }) {
         En savoir plus
       </button>
 
-      {/* A FAIRE :  */}
-
       {/* Modale */}
       {isOpen && (
         <div className="fixed inset-0 bg-black/50 text-white flex justify-center items-center p-6 z-50">
-          <article className="bg-gray-800 flex flex-col max-w-3xl max-h-[90vh] overflow-auto">
+          <article
+            className="bg-gray-800 flex flex-col max-w-3xl max-h-[90vh] overflow-auto"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+          >
             <div className="p-4 flex flex-row justify-between border-b border-gray-600">
-              <h2>Mon profil GitHub</h2>
+              <h2 id="modal-title">Mon profil GitHub</h2>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-400 cursor-pointer hover:text-white"
