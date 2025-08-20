@@ -1,5 +1,11 @@
 import { useState } from 'react';
-
+import {
+  UserRound,
+  UsersRound,
+  MapPin,
+  MessageSquare,
+  Box,
+} from 'lucide-react';
 function Modale({ userData }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,6 +33,7 @@ function Modale({ userData }) {
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-400 cursor-pointer hover:text-white"
+                aria-label="Fermer la modale"
               >
                 X
               </button>
@@ -40,21 +47,27 @@ function Modale({ userData }) {
               />
               <div>
                 <div className="border-b border-gray-600 p-2 flex flex-row">
+                  <UserRound className="mr-2" />
                   {userData.name}
                 </div>
                 <div className="border-b border-gray-600 p-2 flex flex-row">
+                  <MapPin className="mr-2" />
                   {userData.location}
                 </div>
                 <div className="border-b border-gray-600 p-2 flex flex-row">
+                  <MessageSquare className="mr-2" />
                   {userData.bio}
                 </div>
                 <div className="border-b border-gray-600 p-2 flex flex-row">
+                  <Box className="mr-2" />
                   <span>Repositories : {userData.public_repos}</span>
                 </div>
                 <div className="border-b border-gray-600 p-2 flex flex-row">
+                  <UsersRound className="mr-2" />
                   <span>Followers : {userData.followers}</span>
                 </div>
                 <div className="p-2 flex flex-row mb-6">
+                  <UsersRound className="mr-2" />
                   <span>Following : {userData.following}</span>
                 </div>
               </div>
