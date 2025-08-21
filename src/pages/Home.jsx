@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Modale from '../components/ui/Modale';
+import SkillsProgressBar from '../components/ui/SkillsProgressBar';
 
 function Home() {
   const [userData, setUserData] = useState(null);
@@ -75,6 +76,17 @@ function Home() {
             <h2 className="text-2xl pb-4 border-b-4 border-blue-600">
               Mes compétences
             </h2>
+            <div className="flex flex-col gap-4 mt-12">
+              <SkillsProgressBar label="HTML5" value={90} color="bg-red-700" />
+              <SkillsProgressBar label="CSS3" value={80} color="bg-cyan-400" />
+              <SkillsProgressBar
+                label="JavaScript"
+                value={70}
+                color="bg-yellow-400"
+              />
+              <SkillsProgressBar label="PHP" value={60} color="bg-green-700" />
+              <SkillsProgressBar label="React" value={50} color="bg-blue-600" />
+            </div>
           </section>
         </div>
       </div>
