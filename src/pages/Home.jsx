@@ -14,7 +14,10 @@ function Home() {
   return (
     <main className="">
       {/* Hero */}
-      <section className="bg-[url('/assets/img/hero-bg.jpg')] bg-cover bg-center h-screen flex flex-col justify-center text-center text-white">
+      <section
+        className="bg-[url('/assets/img/hero-bg.jpg')] bg-cover bg-center h-screen 
+        flex flex-col justify-center text-center text-white"
+      >
         <div
           className="absolute inset-0 bg-gray-600/50"
           aria-hidden="true"
@@ -32,43 +35,48 @@ function Home() {
         </div>
       </section>
 
-      <div className="bg-gray-100 px-6 py-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
-        {/* About */}
-        <section className="bg-white p-6">
-          <h3 className="text-2xl pb-4 border-b-4 border-blue-600">A propos</h3>
-          <div className='flex flex-col gap-4'>
-            <img
-              src="/assets/img/john-doe-about.jpg"
-              alt="Image de John Doe"
-              className="mt-12"
-            />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              necessitatibus conselectur tempore perferendis nostrum, ex
-              delectus reiciendis impedit aut iure enim placeat? Natus, neque
-              at?
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              necessitatibus conselectur tempore perferendis nostrum, ex
-              delectus reiciendis impedit aut iure enim placeat? Natus, neque
-              at?
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              necessitatibus conselectur tempore perferendis nostrum, ex
-              delectus reiciendis impedit aut iure enim placeat? Natus, neque
-              at?
-            </p>
-          </div>
-        </section>
+      <div className="bg-gray-100 py-12 px-3">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 bg-white rounded-2xl shadow-2xl">
+          {/* About */}
+          <section className="p-6">
+            <h2 className="text-2xl pb-4 border-b-4 border-blue-600">
+              A propos
+            </h2>
+            <div className="flex flex-col gap-4">
+              <img
+                src="/assets/img/john-doe-about.jpg"
+                alt="Image de John Doe"
+                className="mt-12"
+                loading="lazy"
+              />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+                necessitatibus conselectur tempore perferendis nostrum, ex
+                delectus reiciendis impedit aut iure enim placeat? Natus, neque
+                at?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+                necessitatibus conselectur tempore perferendis nostrum, ex
+                delectus reiciendis impedit aut iure enim placeat? Natus, neque
+                at?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+                necessitatibus conselectur tempore perferendis nostrum, ex
+                delectus reiciendis impedit aut iure enim placeat? Natus, neque
+                at?
+              </p>
+            </div>
+          </section>
 
-        {/* Skills */}
-        <section className="bg-white p-6">
-          <h3 className="text-2xl pb-4 border-b-4 border-blue-600">
-            Mes compétences
-          </h3>
-        </section>
+          {/* Skills */}
+          <section className="p-6">
+            <h2 className="text-2xl pb-4 border-b-4 border-blue-600">
+              Mes compétences
+            </h2>
+          </section>
+        </div>
       </div>
     </main>
   );

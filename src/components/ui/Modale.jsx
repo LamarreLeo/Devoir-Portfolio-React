@@ -41,7 +41,7 @@ function Modale({ userData }) {
             </div>
 
             {/* Body */}
-            <div className="px-6 pt-6 flex flex-col lg:flex-row">
+            <div className="px-6 pt-6 grid grid-cols-1 md:grid-cols-2">
               <img
                 src={userData.avatar_url}
                 alt={`Avatar GitHub de ${userData.name}`}
