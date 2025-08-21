@@ -28,6 +28,7 @@ function Modale({ userData }) {
             aria-modal="true"
             aria-labelledby="modal-title"
           >
+            {/* Header */}
             <div className="p-4 flex flex-row justify-between border-b border-gray-600">
               <h2 id="modal-title">Mon profil GitHub</h2>
               <button
@@ -39,6 +40,7 @@ function Modale({ userData }) {
               </button>
             </div>
 
+            {/* Body */}
             <div className="px-6 pt-6 flex flex-col lg:flex-row">
               <img
                 src={userData.avatar_url}
@@ -73,6 +75,7 @@ function Modale({ userData }) {
               </div>
             </div>
 
+            {/* Footer */}
             <footer className="px-6 py-4 flex flex-row justify-end border-t border-gray-600">
               <button
                 onClick={() => setIsOpen(false)}
