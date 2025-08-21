@@ -10,11 +10,11 @@ function Services() {
         <div className="text-center flex flex-col gap-2">
           <h1 className="text-4xl">Mon offre de services</h1>
           <p>Voici les prestations sur lesquelles je peux intervenir</p>
-          <div className="h-1 bg-blue-600 mx-auto w-32 lg:w-112 mt-6"></div>
+          <div className="h-1 bg-blue-600 mx-auto w-32 lg:w-112 mt-6 mb-16"></div>
         </div>
 
         {/* Services List */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <ServiceCard
             Icon={
               <Brush
