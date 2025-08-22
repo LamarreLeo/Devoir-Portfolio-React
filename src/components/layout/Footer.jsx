@@ -37,8 +37,8 @@ function Footer() {
   const lastProjects = projectsData.projects.slice(-6);
 
   return (
-    <footer className="bg-gray-800 text-white p-8 flex md:justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0">
+    <footer className="bg-gray-800 text-white p-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0">
         {/* Infos */}
         <div
           className="flex flex-col gap-2"
