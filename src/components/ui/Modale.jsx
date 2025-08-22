@@ -23,7 +23,7 @@ function Modale({ userData }) {
       {isOpen && (
         <div className="fixed inset-0 bg-black/50 text-white flex justify-center items-center p-6 z-50">
           <article
-            className="bg-gray-800 flex flex-col max-w-3xl max-h-[90vh] overflow-auto"
+            className="bg-gray-800 flex flex-col max-w-3xl max-h-[80vh] overflow-auto"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
