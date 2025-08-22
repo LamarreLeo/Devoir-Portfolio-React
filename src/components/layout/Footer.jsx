@@ -50,12 +50,16 @@ function Footer() {
               40 rue Laure Diebold <br />
               69009 Lyon, France
             </p>
-            <a href="tel:0123456789" className="footer-hover">
-              01 23 45 67 89
-            </a>
-            <a href="mailto:john.doe@gmail.com" className="footer-hover">
-              john.doe@gmail.com
-            </a>
+            <div>
+              <a href="tel:0123456789" className="footer-hover">
+                01 23 45 67 89
+              </a>
+            </div>
+            <div>
+              <a href="mailto:john.doe@gmail.com" className="footer-hover">
+                john.doe@gmail.com
+              </a>
+            </div>
           </address>
 
           <ul className="flex gap-2 mt-2">
