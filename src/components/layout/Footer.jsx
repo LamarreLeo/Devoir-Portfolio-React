@@ -37,8 +37,8 @@ function Footer() {
   const lastProjects = projectsData.projects.slice(-6);
 
   return (
-    <footer className="bg-gray-800 text-white p-8 flex md:justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0">
+    <footer className="bg-gray-800 text-white p-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0">
         {/* Infos */}
         <div
           className="flex flex-col gap-2"
@@ -50,8 +50,16 @@ function Footer() {
               40 rue Laure Diebold <br />
               69009 Lyon, France
             </p>
-            <a href="tel:0123456789">01 23 45 67 89</a>
-            <a href="mailto:john.doe@gmail.com">john.doe@gmail.com</a>
+            <div>
+              <a href="tel:0123456789" className="footer-hover">
+                01 23 45 67 89
+              </a>
+            </div>
+            <div>
+              <a href="mailto:john.doe@gmail.com" className="footer-hover">
+                john.doe@gmail.com
+              </a>
+            </div>
           </address>
 
           <ul className="flex gap-2 mt-2">
@@ -84,7 +92,9 @@ function Footer() {
           <ul className="text-sm flex flex-col gap-1">
             {navItems.map((item) => (
               <li key={item.link}>
-                <Link to={item.link}>{item.label}</Link>
+                <Link to={item.link} className="footer-hover">
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -99,7 +109,9 @@ function Footer() {
           <ul className="text-sm flex flex-col gap-1">
             {lastProjects.map((project) => (
               <li key={project.slug}>
-                <Link to={`/portfolio#${project.slug}`}>{project.title}</Link>
+                <Link to={`/portfolio`} className="footer-hover">
+                  {project.title}
+                </Link>
               </li>
             ))}
           </ul>
