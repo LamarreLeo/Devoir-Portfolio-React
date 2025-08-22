@@ -47,7 +47,7 @@ function ContactForm() {
         placeholder="Votre message"
         aria-label="Votre message"
         required
-        className="border border-gray-300 rounded-lg p-2.5 h-60 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border border-gray-300 rounded-lg p-2.5 h-90 focus:outline-none focus:ring-2 focus:ring-blue-500"
       ></textarea>
 
       <button
