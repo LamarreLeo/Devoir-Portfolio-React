@@ -47,27 +47,40 @@ function Modale({ userData }) {
                 alt={`Avatar GitHub de ${userData.name}`}
                 className="object-cover"
               />
+
               <div>
                 <div className="border-b border-gray-600 p-2 flex flex-row">
                   <UserRound className="mr-2" />
-                  {userData.name}
+                  <a
+                    href="https://github.com/github-john-doe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-blue-500"
+                  >
+                    {userData.name}
+                  </a>
                 </div>
+
                 <div className="border-b border-gray-600 p-2 flex flex-row">
                   <MapPin className="mr-2" />
                   {userData.location}
                 </div>
+
                 <div className="border-b border-gray-600 p-2 flex flex-row">
                   <MessageSquare className="mr-2" />
                   {userData.bio}
                 </div>
+
                 <div className="border-b border-gray-600 p-2 flex flex-row">
                   <Box className="mr-2" />
                   <span>Repositories : {userData.public_repos}</span>
                 </div>
+
                 <div className="border-b border-gray-600 p-2 flex flex-row">
                   <UsersRound className="mr-2" />
                   <span>Followers : {userData.followers}</span>
                 </div>
+
                 <div className="p-2 flex flex-row mb-6">
                   <UsersRound className="mr-2" />
                   <span>Following : {userData.following}</span>
