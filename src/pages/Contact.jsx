@@ -3,7 +3,7 @@ import ContactForm from '../components/forms/ContactForm';
 function Contact() {
   return (
     <main className="mt-12">
-      <div className="w-full bg-gray-100 py-12 px-3">
+      <div className="w-full bg-gray-100 py-12 px-6">
         <div className="text-center flex flex-col gap-2">
           <h1 className="text-4xl">Contact</h1>
           <p>
