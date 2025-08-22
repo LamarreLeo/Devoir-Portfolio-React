@@ -29,7 +29,7 @@ function Modale({ userData }) {
             aria-labelledby="modal-title"
           >
             {/* Header */}
-            <div className="p-4 flex flex-row justify-between border-b border-gray-600">
+            <header className="p-4 flex flex-row justify-between border-b border-gray-600">
               <h2 id="modal-title">Mon profil GitHub</h2>
               <button
                 onClick={() => setIsOpen(false)}
@@ -38,7 +38,7 @@ function Modale({ userData }) {
               >
                 X
               </button>
-            </div>
+            </header>
 
             {/* Body */}
             <div className="px-6 pt-6 grid grid-cols-1 md:grid-cols-2">
@@ -63,12 +63,12 @@ function Modale({ userData }) {
 
                 <div className="border-b border-gray-600 p-2 flex flex-row">
                   <MapPin className="mr-2" />
-                  {userData.location}
+                  <span>{userData.location}</span>
                 </div>
 
-                <div className="border-b border-gray-600 p-2 flex flex-row">
-                  <MessageSquare className="mr-2" />
-                  {userData.bio}
+                <div className="border-b border-gray-600 p-2 relative">
+                  <MessageSquare className="absolute top-2 left-2" />
+                  <p className="text-left indent-8">{userData.bio}</p>
                 </div>
 
                 <div className="border-b border-gray-600 p-2 flex flex-row">
