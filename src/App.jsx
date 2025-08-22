@@ -5,11 +5,11 @@ import Footer from './components/layout/Footer.jsx';
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 }
 

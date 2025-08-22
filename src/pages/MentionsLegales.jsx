@@ -8,7 +8,8 @@ function MentionsLegales() {
         <title>Mentions légales</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
-      <main className="mt-12">
+
+      <main className="mt-12 flex-grow">
         <section className="px-6 py-12 max-w-7xl mx-auto">
           <div className="text-center flex flex-col gap-2">
             <h1 className="text-4xl">Mentions légales</h1>
