@@ -5,7 +5,7 @@ function MentionsLegales() {
   return (
     <>
       <Helmet>
-        <title>Mentions légales</title>
+        <title>John Doe - Mentions légales</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
