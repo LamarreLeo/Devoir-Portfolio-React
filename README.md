@@ -40,8 +40,8 @@ Portfolio développé en React.js pour présenter les compétences et réalisati
 1. **Cloner le repository :**
 
    ```bash
-   git clone https://github.com/[username]/portfolio-john-doe.git
-   cd portfolio-john-doe
+   git clone https://github.com/LamarreLeo/Devoir-Portfolio-React
+   cd Devoir-Portfolio-React
    ```
 
 2. **Installer les dépendances :**
@@ -112,8 +112,8 @@ Portfolio developed in React.js to showcase the skills and achievements of John 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/[username]/portfolio-john-doe.git
-   cd portfolio-john-doe
+   git clone https://github.com/LamarreLeo/Devoir-Portfolio-React
+   cd Devoir-Portfolio-React
    ```
 
 2. **Install dependencies:**
